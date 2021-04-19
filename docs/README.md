@@ -1,3 +1,8 @@
+# User agreement
+
+Please check out License Agreement for personal usage terms and limitations
+
+---
 
 # How to use calculator:
 1. Run `python calculate.py`
@@ -18,4 +23,3 @@
 - Rectangle: `P = 2a + 2b`
 - Square: `P = 4a`
 - Triangle: `P = a + b + c`
-
