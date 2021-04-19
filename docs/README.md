@@ -1,10 +1,12 @@
 
+
 # How to use calculator:
 1. Run `python calculate.py`
 2. Enter the figure name. Available are Circle, Square.
 3. Enter the function: Area or Perimeter.
 4. Enter figure sizes. Radius for circle, one side for square.
 5. Get the answer!
+
 
 # Math formulas
 ## Area
