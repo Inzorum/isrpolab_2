@@ -8,3 +8,8 @@
 - Circle: P = 2πR
 - Rectangle: P = 2a + 2b
 - Square: P = 4a
+
+---
+Modified by: Антон derasdert
+Lab completed: 2025-11-13
+
