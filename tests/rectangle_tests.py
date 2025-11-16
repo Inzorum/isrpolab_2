@@ -12,7 +12,7 @@ class TestRectangeFunctions(unittest.TestCase):
         self.assertEqual(area(2, 2), 4)
 
     def test_area_zero(self):
-        self.assertEqual(area(0, 0), 0)
+        self.assertEqual(area(0, 0), 0)    
 
     def test_area_negative(self):
       with self.assertRaises(ValueError):
