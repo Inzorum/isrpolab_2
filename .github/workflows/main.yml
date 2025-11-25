@@ -49,10 +49,3 @@ jobs:
       - name: Run unit tests
         run: |
           python -m unittest geometric_tests.py -v
-
-      - name: Report card
-        if: always()
-        run: |
-          echo "## Report card" >> $env:GITHUB_STEP_SUMMARY
-          echo "" >> $env:GITHUB_STEP_SUMMARY
-          echo "**Status:** ${{ job.status }}" >> $env:GITHUB_STEP_SUMMARY
