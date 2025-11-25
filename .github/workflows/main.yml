@@ -23,13 +23,6 @@ jobs:
         run: |
           python -m unittest geometric_tests.py -v
 
-      - name: Report card
-        if: always()
-        run: |
-          echo "## Report card" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-
 
   test-windows:
     runs-on: windows-latest
