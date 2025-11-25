@@ -1,0 +1,35 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+      
+    - name: Run unit tests
+      run: |
+        cd geometric_lib
+        python -m unittest test_geometry.py -v
+        
+    - name: Run tests with coverage
+      run: |
+        cd geometric_lib
+        python -m coverage run test_geometry.py
+        python -m coverage report -m
