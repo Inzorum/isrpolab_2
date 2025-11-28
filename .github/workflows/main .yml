@@ -1,0 +1,41 @@
+name: CI/CD tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests_ubuntu:
+    name: Ubuntu tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Python set up
+        uses: actions/setup-python@v5
+        with: 
+          python-version: "3.13"
+
+      - name: Installations
+        run: |
+          pip install -r requirements.txt
+      - name: Run tests
+        run: python -m unittest tests.py
+  tests_windows:
+    name: Windows tests
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Python set up
+        uses: actions/setup-python@v5
+        with: 
+          python-version: "3.13"
+
+      - name: Installations
+        run: |
+          pip install -r requirements.txt
+      - name: Run tests
+        run: python -m unittest tests.py
