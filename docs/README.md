@@ -7,4 +7,6 @@
 ## Perimeter
 - Circle: P = 2πR
 - Rectangle: P = 2a + 2b
-- Square: P = 4a
+- Square: P = 4a 
+"## Lesson 6 Practice" 
+"This change was made for Git Lesson 6 practice" 
