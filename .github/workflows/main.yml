@@ -1,0 +1,36 @@
+# Имя workflow. Так он будет отображаться во вкладке Actions
+name: Python tests
+
+# Когда запускать workflow
+on:
+  # Запускать при любом push в репозиторий
+  push:
+  # И при любом pull request
+  pull_request:
+
+jobs:
+  test:
+    # matrix позволяет прогонять одни и те же шаги на разных ОС
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # Две ОС, согласно заданию
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      # 1. Скачиваем код репозитория в раннер
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Устанавливаем нужную версию Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 4. Запуск unit-тестов
+      # python -m unittest discover автоматически ищет файлы вида test*.py
+      # и запускает тесты из них (в твоём случае test_circle.py и test_square.py)
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -v
