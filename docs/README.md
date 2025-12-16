@@ -1,4 +1,4 @@
-# Math formulas
+# Math formulas e
 ## Area
 - Circle: S = πR²
 - Rectangle: S = ab
