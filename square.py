@@ -13,6 +13,10 @@ def area(a):
     >>> area(4)
     16
     """
+    if not isinstance(a, (int, float)):
+        raise TypeError("Сторона должна быть числом")
+    if a < 0:
+        raise ValueError("Сторона не может быть отрицательной")
     return a * a
 
 
@@ -30,6 +34,10 @@ def perimeter(a):
     >>> perimeter(4)
     16
     """
+    if not isinstance(a, (int, float)):
+        raise TypeError("Сторона должна быть числом")
+    if a < 0:
+        raise ValueError("Сторона не может быть отрицательной")
     return 4 * a
 
 

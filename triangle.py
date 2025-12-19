@@ -13,6 +13,10 @@ def area(a, h):
     >>> area(4, 5)
     10.0
     """
+    if not isinstance(a, (int, float)) or not isinstance(h, (int, float)):
+        raise TypeError("Основание и высота должны быть числами")
+    if a < 0 or h < 0:
+        raise ValueError("Основание и высота не могут быть отрицательными")
     return 0.5 * a * h
 
 def perimeter(a, b, c):
@@ -31,4 +35,8 @@ def perimeter(a, b, c):
     >>> perimeter(3, 4, 5)
     12
     """
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or not isinstance(c, (int, float)):
+        raise TypeError("Стороны должны быть числами")
+    if a < 0 or b < 0 or c < 0:
+        raise ValueError("Стороны не могут быть отрицательными")
     return a + b + c

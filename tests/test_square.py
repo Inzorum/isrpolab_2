@@ -9,52 +9,74 @@ from square import area, perimeter
 
 class SquareTestCase(unittest.TestCase):
     def test_area_zero(self):
+        """Тест площади квадрата с нулевой стороной"""
         res = area(0)
         self.assertEqual(res, 0)
 
     def test_area_one(self):
+        """Тест площади квадрата со стороной равной единице"""
         res = area(1)
         self.assertEqual(res, 1)
 
     def test_area_positive(self):
+        """Тест площади квадрата с положительной стороной"""
         res = area(4)
         self.assertEqual(res, 16)
 
     def test_area_large(self):
-        res = area(10)
-        self.assertEqual(res, 100)
+        """Тест площади квадрата с большой стороной"""
+        res = area(100)
+        self.assertEqual(res, 10000)
 
     def test_area_float(self):
+        """Тест площади квадрата с дробной стороной"""
         res = area(2.5)
         self.assertAlmostEqual(res, 6.25, places=5)
 
+    def test_area_negative(self):
+        """Тест площади квадрата с отрицательной стороной"""
+        with self.assertRaises(ValueError):
+            area(-5)
+
+    def test_area_string(self):
+        """Тест площади квадрата со строковым значением"""
+        with self.assertRaises(TypeError):
+            area("5")
+
     def test_perimeter_zero(self):
+        """Тест периметра квадрата с нулевой стороной"""
         res = perimeter(0)
         self.assertEqual(res, 0)
 
     def test_perimeter_one(self):
+        """Тест периметра квадрата со стороной равной единице"""
         res = perimeter(1)
         self.assertEqual(res, 4)
 
     def test_perimeter_positive(self):
+        """Тест периметра квадрата с положительной стороной"""
         res = perimeter(4)
         self.assertEqual(res, 16)
 
     def test_perimeter_large(self):
-        res = perimeter(10)
-        self.assertEqual(res, 40)
+        """Тест периметра квадрата с большой стороной"""
+        res = perimeter(100)
+        self.assertEqual(res, 400)
 
     def test_perimeter_float(self):
+        """Тест периметра квадрата с дробной стороной"""
         res = perimeter(2.5)
         self.assertEqual(res, 10.0)
 
-    def test_area_large(self):
-        res = area(100)
-        self.assertEqual(res, 10000)
+    def test_perimeter_negative(self):
+        """Тест периметра квадрата с отрицательной стороной"""
+        with self.assertRaises(ValueError):
+            perimeter(-5)
 
-    def test_perimeter_large(self):
-        res = perimeter(100)
-        self.assertEqual(res, 400)
+    def test_perimeter_string(self):
+        """Тест периметра квадрата со строковым значением"""
+        with self.assertRaises(TypeError):
+            perimeter("5")
 
 
 if __name__ == '__main__':
