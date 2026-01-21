@@ -1,0 +1,32 @@
+name: CI
+#Контролирует когда будет запущен Workflow
+on:
+  #Запускает workflow на пуш или на реквест для ветки main
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  #Позволяет запускать workflow вручную из Actions tab
+  workflow_dispatch:
+
+#Определяет набор задач, которые будет выполнять workflow
+jobs:
+  build:
+    #Запускает тесты на двух операционных системах: ubuntu и windows
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+    #Проверяет ваш репозиторий под $GITHUB_WORKSPACE, чтобы задачи могли получить доступ к ним
+      - uses: actions/checkout@v4
+
+    #Установка Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+        #Запуск unit-тестов
+      - name: Run unit tests
+        run: python -m unittest tests.Geometric_lib_test
