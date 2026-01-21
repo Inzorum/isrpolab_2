@@ -1,0 +1,30 @@
+name: Run Geometric_lib1 Unit Tests
+
+on:
+  push:
+    branches: [ main, new_features_504957 ]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    
+    name: Unit Tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Run tests with unittest discovery
+      run: |
+        python -m unittest rectangle_tests.py
+        python -m unittest triangle_tests.py
+        python -m unittest square_tests.py
+        python -m unittest circle_tests.py
