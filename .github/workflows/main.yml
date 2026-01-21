@@ -1,0 +1,44 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Run tests from geometric_lib directory
+      run: |
+        echo "Running tests on ${{ runner.os }}..."
+        echo "Current directory:"
+        pwd
+        echo ""
+        echo "Switching to geometric_lib directory..."
+        cd geometric_lib
+        
+        echo "Running triangle tests..."
+        python -m unittest tests/test_triangle.py -v
+        
+        echo "Running circle tests..."
+        python -m unittest tests/test_circle.py -v
+        
+        echo "Running square tests..."
+        python -m unittest tests/test_square.py -v
+        
+        echo "Running rectangle tests..."
+        python -m unittest tests/test_rectangle.py -v
