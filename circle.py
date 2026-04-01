@@ -2,8 +2,7 @@ import math
 
 
 def area(r):
-    return math.pi * r * r
-
+    return r * r * 7
 
 def perimeter(r):
     return 2 * math.pi * r
