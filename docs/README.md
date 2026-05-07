@@ -8,3 +8,5 @@
 - Circle: P = 2πR
 - Rectangle: P = 2a + 2b
 - Square: P = 4a
+
+# BALAKIN, SHATALOVA, NESTEROV, KARASEV, RABINOVICH, CHEKRYGINA, KATAICEV
