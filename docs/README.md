@@ -1,4 +1,10 @@
 # Math formulas
+
+#Surface area
+Cube: S = 6 * a²
+Sphere: S = 4 * π * R²
+Cylinder: S = 2πR * (R + h)
+
 ## Area
 - Circle: S = πR²
 - Rectangle: S = ab
