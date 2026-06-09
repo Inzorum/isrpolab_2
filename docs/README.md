@@ -1,4 +1,4 @@
-
+ИЗМЕНЕНИЯ ДЛЯ ПУША
 
 # How to use calculator:
 1. Run `python calculate.py`
