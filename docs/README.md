@@ -8,3 +8,5 @@
 - Circle: P = 2πR
 - Rectangle: P = 2a + 2b
 - Square: P = 4a
+
+This file contains basic formulas for working with geometric figures.
