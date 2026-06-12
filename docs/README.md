@@ -1,3 +1,5 @@
+# Приветствие 
+Привет!
 
 # How to use calculator:
 1. Run `python calculate.py`
@@ -19,3 +21,5 @@
 - Square: `P = 4a`
 - Triangle: `P = a + b + c`
 
+# Прощание
+Прощай!
