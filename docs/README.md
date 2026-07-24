@@ -3,6 +3,7 @@
 - Circle: S = πR²
 - Rectangle: S = ab
 - Square: S = a²
+vnes izmeneniya roflan ebalo
 
 ## Perimeter
 - Circle: P = 2πR
