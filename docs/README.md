@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # How to use calculator:
 1. Run `python calculate.py`
 2. Enter the figure name. Available are Circle, Square.
