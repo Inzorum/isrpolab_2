@@ -5,13 +5,6 @@
 3. Enter the function: Area or Perimeter.
 4. Enter figure sizes. Radius for circle, one side for square.
 5. Get the answer!
-=======
-# User agreement 
-
-Please check out License Agreement for personal usage terms and limitations
-
----
->>>>>>> 86edb1c (L-05: Update Docs. Add user agreement info)
 
 # Math formulas
 ## Area
