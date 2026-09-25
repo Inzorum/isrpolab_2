@@ -1,10 +1,18 @@
 # Math formulas
+Library modules: `circle.py`, `square.py`.
 ## Area
 - Circle: S = πR²
 - Rectangle: S = ab
 - Square: S = a²
-
+- Triangle: S = (a · h) / 2
 ## Perimeter
 - Circle: P = 2πR
 - Rectangle: P = 2a + 2b
 - Square: P = 4a
+- Triangle: P = a + b + c
+## Usage
+```python
+import circle
+import square
+print(circle.area(2))
+print(square.perimeter(5))
